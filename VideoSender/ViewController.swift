@@ -23,5 +23,21 @@ class ViewController: NSViewController {
     }
 
 
+
+    @IBAction func startClicked(_ sender: Any) {
+        start()
+    }
+
+    @IBAction func stopClicked(_ sender: Any) {
+        stop()
+    }
+
+    func start() {
+        print("start clicked")
+    }
+
+    func stop() {
+        print("stop clicked")
+    }
 }
 
