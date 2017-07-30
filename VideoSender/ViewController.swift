@@ -10,12 +10,11 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+    var screenCapturer: ScreenRecorderService?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-
     override var representedObject: Any? {
         didSet {
         // Update the view, if already loaded.
@@ -25,19 +24,23 @@ class ViewController: NSViewController {
 
 
     @IBAction func startClicked(_ sender: Any) {
-        start()
+        startMakingCGDisplayStream()
     }
 
     @IBAction func stopClicked(_ sender: Any) {
-        stop()
+        stopMakingCGDisplayStream()
     }
 
-    func start() {
-        print("start clicked")
+
+
+    // MARK: - ScreenRecorderService
+    func startMakingCGDisplayStream(){
+        screenCapturer = ScreenRecorderService()
+        screenCapturer?.getCVPixleBuffersFromScreenCapture()
     }
 
-    func stop() {
-        print("stop clicked")
+    func stopMakingCGDisplayStream(){
+        screenCapturer?.stop()
     }
+
 }
-
