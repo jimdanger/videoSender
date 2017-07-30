@@ -36,7 +36,7 @@ class ViewController: NSViewController {
     // MARK: - ScreenRecorderService
     func startMakingCGDisplayStream(){
         screenCapturer = ScreenRecorderService()
-        screenCapturer?.getCVPixleBuffersFromScreenCapture()
+        screenCapturer?.start()
     }
 
     func stopMakingCGDisplayStream(){
