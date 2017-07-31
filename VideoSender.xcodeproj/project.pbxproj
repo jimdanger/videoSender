@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B39E73A1F2F545800DE5CCE /* SendPreviewWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B39E7381F2F545800DE5CCE /* SendPreviewWindowController.swift */; };
 		8B59AB611F23901D005601DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B59AB601F23901D005601DA /* AppDelegate.swift */; };
 		8B59AB631F23901D005601DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B59AB621F23901D005601DA /* ViewController.swift */; };
 		8B59AB651F23901D005601DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B59AB641F23901D005601DA /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 		8B59AB731F23901D005601DA /* VideoSenderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B59AB721F23901D005601DA /* VideoSenderTests.swift */; };
 		8B59AB7E1F23901D005601DA /* VideoSenderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B59AB7D1F23901D005601DA /* VideoSenderUITests.swift */; };
 		8B5B8F321F2E2F710090CF68 /* ScreenRecorderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B8F311F2E2F710090CF68 /* ScreenRecorderService.swift */; };
+		8BAA3D2E1F2F5AD4009C4EA5 /* PreviewLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAA3D2D1F2F5AD4009C4EA5 /* PreviewLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B39E7381F2F545800DE5CCE /* SendPreviewWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendPreviewWindowController.swift; sourceTree = "<group>"; };
 		8B59AB5D1F23901D005601DA /* VideoSender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoSender.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B59AB601F23901D005601DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B59AB621F23901D005601DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +50,7 @@
 		8B59AB7D1F23901D005601DA /* VideoSenderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSenderUITests.swift; sourceTree = "<group>"; };
 		8B59AB7F1F23901D005601DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B5B8F311F2E2F710090CF68 /* ScreenRecorderService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenRecorderService.swift; sourceTree = "<group>"; };
+		8BAA3D2D1F2F5AD4009C4EA5 /* PreviewLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewLayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 			children = (
 				8B59AB601F23901D005601DA /* AppDelegate.swift */,
 				8B59AB621F23901D005601DA /* ViewController.swift */,
+				8B39E7381F2F545800DE5CCE /* SendPreviewWindowController.swift */,
+				8BAA3D2D1F2F5AD4009C4EA5 /* PreviewLayer.swift */,
 				8B5B8F331F2E35A70090CF68 /* IdeaMovieFile */,
 				8B5B8F311F2E2F710090CF68 /* ScreenRecorderService.swift */,
 				8B59AB641F23901D005601DA /* Assets.xcassets */,
@@ -269,7 +275,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BAA3D2E1F2F5AD4009C4EA5 /* PreviewLayer.swift in Sources */,
 				8B59AB631F23901D005601DA /* ViewController.swift in Sources */,
+				8B39E73A1F2F545800DE5CCE /* SendPreviewWindowController.swift in Sources */,
 				8B5B8F321F2E2F710090CF68 /* ScreenRecorderService.swift in Sources */,
 				8B59AB611F23901D005601DA /* AppDelegate.swift in Sources */,
 			);

@@ -23,6 +23,7 @@ class ScreenRecorderService: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
 
     var compressionSesionOut: UnsafeMutablePointer<VTCompressionSession?>
     var vtCompressionSession: VTCompressionSession
+    var sendPreviewViewController: SendPreviewViewController?
 
     public override init(){
 
@@ -40,6 +41,10 @@ class ScreenRecorderService: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
 
             self.handleStream(cgDisplayStreamFrameStatus: cgDisplayStreamFrameStatus, uInt64: uInt64, iOSurfaceRef: iOSurfaceRef, cGDisplayStreamUpdate: cGDisplayStreamUpdate)
         })
+    }
+
+    func setDelegate(sendPreviewViewController: SendPreviewViewController){
+        self.sendPreviewViewController = sendPreviewViewController
     }
 
     func initVTCompressionSession(){
@@ -91,7 +96,17 @@ class ScreenRecorderService: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
     }
 
     func doSomethingWithCMSampleBuffers(cMSampleBuffer: CMSampleBuffer){
-        convertCMSampleBuffersToElemtaryStream(cMSampleBuffer: cMSampleBuffer)
+        previewSampleBuffersInThisAppBeforeSendingToOtherApp(cMSampleBuffer: cMSampleBuffer)
+//        convertCMSampleBuffersToElemtaryStream(cMSampleBuffer: cMSampleBuffer)
+    }
+
+    func previewSampleBuffersInThisAppBeforeSendingToOtherApp(cMSampleBuffer: CMSampleBuffer) {
+        guard let previewVc = self.sendPreviewViewController else {
+            return
+        }
+        previewVc.enqueue(cMSamplebuffer: cMSampleBuffer)
+        self.checkIfHanging()
+
     }
 
     func convertCMSampleBuffersToElemtaryStream(cMSampleBuffer: CMSampleBuffer) {
@@ -101,7 +116,8 @@ class ScreenRecorderService: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
 
         if let unwrappedFormatDescription = formatDescription {
             let h264ParameterSetAtIndex = CMVideoFormatDescriptionGetH264ParameterSetAtIndex(unwrappedFormatDescription, 0, nil, nil, nil, nil)
-            self.checkIfHanging()
+            print(h264ParameterSetAtIndex)
+
         }
 
 

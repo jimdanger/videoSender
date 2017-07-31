@@ -678,6 +678,33 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
+        <!--Send Preview View Controller-->
+        <scene sceneID="tnh-Kl-daS">
+            <objects>
+                <viewController storyboardIdentifier="SendPreviewViewController" id="Dbo-0R-3dt" customClass="SendPreviewViewController" customModule="VideoSender" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Dok-Ni-KkZ">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="bCc-Fv-nfS" customClass="PreviewLayer" customModule="VideoSender" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="bCc-Fv-nfS" firstAttribute="leading" secondItem="Dok-Ni-KkZ" secondAttribute="leading" id="QE8-7O-pm7"/>
+                            <constraint firstItem="bCc-Fv-nfS" firstAttribute="top" secondItem="Dok-Ni-KkZ" secondAttribute="top" id="aXr-A3-sHJ"/>
+                            <constraint firstAttribute="bottom" secondItem="bCc-Fv-nfS" secondAttribute="bottom" id="bDp-0i-wWp"/>
+                            <constraint firstAttribute="trailing" secondItem="bCc-Fv-nfS" secondAttribute="trailing" id="eUd-Xe-8hK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="previewLayer" destination="bCc-Fv-nfS" id="5iv-bj-yZD"/>
+                    </connections>
+                </viewController>
+                <customObject id="bir-xL-KGn" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="651" y="476"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
