@@ -12,10 +12,13 @@ class ViewController: NSViewController {
 
     var screenCapturer: ScreenRecorderService?
     var previewWindow: NSWindow?
+    var timer: Timer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+
+
     override var representedObject: Any? {
         didSet {
             // Update the view, if already loaded.

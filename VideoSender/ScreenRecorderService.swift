@@ -17,6 +17,7 @@ class ScreenRecorderService: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
 
     var x = 0
     var timeStampValue: Int64 = 0
+    var dumpFramesInCompressionQueueTimer: Timer?
     var displayStream: CGDisplayStream?
     let backgroundQueue = DispatchQueue(label: "com.jimdanger.app.queue", qos: .background, target: nil)
 
@@ -65,6 +66,10 @@ class ScreenRecorderService: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
 
     func stop() {
         displayStream?.stop()
+        dumpFramesInQueue()
+    }
+
+    func dumpFramesInQueue(){
         VTCompressionSessionCompleteFrames(self.vtCompressionSession, CMTimeMake(self.timeStampValue, 1))
     }
 
@@ -104,8 +109,11 @@ class ScreenRecorderService: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
     }
 
     func doSomethingWithCMSampleBuffers(cMSampleBuffer: CMSampleBuffer){
+
+
         previewSampleBuffersInThisAppBeforeSendingToOtherApp(cMSampleBuffer: cMSampleBuffer)
-//        convertCMSampleBuffersToElemtaryStream(cMSampleBuffer: cMSampleBuffer)
+        convertCMSampleBuffersToElemtaryStream(cMSampleBuffer: cMSampleBuffer)
+        dumpQueuePrecheck()
     }
 
     func previewSampleBuffersInThisAppBeforeSendingToOtherApp(cMSampleBuffer: CMSampleBuffer) {
@@ -114,7 +122,6 @@ class ScreenRecorderService: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
         }
         previewVc.enqueue(cMSamplebuffer: cMSampleBuffer)
         self.checkIfHanging()
-
     }
 
     func convertCMSampleBuffersToElemtaryStream(cMSampleBuffer: CMSampleBuffer) {
@@ -130,9 +137,15 @@ class ScreenRecorderService: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
 
 
     }
+    func dumpQueuePrecheck() { // if the main display stops moving for a moment, we want to release the frames in the compression queue.
 
-
-
+        DispatchQueue.main.async {
+            self.dumpFramesInCompressionQueueTimer?.invalidate()
+            self.dumpFramesInCompressionQueueTimer = Timer.scheduledTimer(timeInterval: 0.02, target: self,
+                                                                     selector: #selector(self.dumpFramesInQueue),
+                                                                     userInfo: nil, repeats: false)
+        }
+    }
 
 
     func checkIfHanging(){
