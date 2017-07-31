@@ -29,15 +29,23 @@ class ScreenRecorderService: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
 
         let displayId: CGDirectDisplayID = CGDirectDisplayID(CGMainDisplayID())
 
+
         compressionSesionOut = UnsafeMutablePointer<VTCompressionSession?>.allocate(capacity: 1)
-        VTCompressionSessionCreate(nil, 100, 100, kCMVideoCodecType_H264, nil, nil, nil, nil, nil, compressionSesionOut)
+
+        let bounds: CGRect = CGDisplayBounds(displayId)
+        let width: Int32 = Int32(bounds.width)
+        let height: Int32 = Int32(bounds.height)
+
+
+
+        VTCompressionSessionCreate(nil, width, height, kCMVideoCodecType_H264, nil, nil, nil, nil, nil, compressionSesionOut)
         vtCompressionSession = compressionSesionOut.pointee.unsafelyUnwrapped
         VTSessionSetProperty(vtCompressionSession, kVTCompressionPropertyKey_RealTime, kCFBooleanTrue)
         // TODO: play with these properties ^^ to possibly improve performance.
 
         super.init()
 
-        displayStream = CGDisplayStream(dispatchQueueDisplay: displayId, outputWidth: 100, outputHeight: 100, pixelFormat: Int32(k32BGRAPixelFormat), properties: nil, queue: backgroundQueue, handler: { (cgDisplayStreamFrameStatus, uInt64, iOSurfaceRef, cGDisplayStreamUpdate) in
+        displayStream = CGDisplayStream(dispatchQueueDisplay: displayId, outputWidth: Int(width), outputHeight: Int(height), pixelFormat: Int32(k32BGRAPixelFormat), properties: nil, queue: backgroundQueue, handler: { (cgDisplayStreamFrameStatus, uInt64, iOSurfaceRef, cGDisplayStreamUpdate) in
 
             self.handleStream(cgDisplayStreamFrameStatus: cgDisplayStreamFrameStatus, uInt64: uInt64, iOSurfaceRef: iOSurfaceRef, cGDisplayStreamUpdate: cGDisplayStreamUpdate)
         })
