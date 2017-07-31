@@ -90,14 +90,19 @@ class ScreenRecorderService: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
         }
     }
 
-
-
     func doSomethingWithCMSampleBuffers(cMSampleBuffer: CMSampleBuffer){
-
-        self.checkIfHanging()
+        convertCMSampleBuffersToElemtaryStream(cMSampleBuffer: cMSampleBuffer)
     }
 
-    func convertCMSampleBuffersToElemtaryStream() {
+    func convertCMSampleBuffersToElemtaryStream(cMSampleBuffer: CMSampleBuffer) {
+
+        let formatDescription: CMVideoFormatDescription? =  CMSampleBufferGetFormatDescription(cMSampleBuffer)
+
+
+        if let unwrappedFormatDescription = formatDescription {
+            let h264ParameterSetAtIndex = CMVideoFormatDescriptionGetH264ParameterSetAtIndex(unwrappedFormatDescription, 0, nil, nil, nil, nil)
+            self.checkIfHanging()
+        }
 
 
     }
