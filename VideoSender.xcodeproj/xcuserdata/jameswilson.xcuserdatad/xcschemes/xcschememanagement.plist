@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>VideoReceiver.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>VideoSender.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -23,6 +28,21 @@
 			<true/>
 		</dict>
 		<key>8B59AB781F23901D005601DA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8BB6B1381F30B70F00913323</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8BB6B1481F30B70F00913323</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8BB6B1531F30B70F00913323</key>
 		<dict>
 			<key>primary</key>
 			<true/>

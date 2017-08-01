@@ -135,11 +135,12 @@ class ScreenRecorderService: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
         if let unwrappedFormatDescription = formatDescription {
             let h264ParameterSetAtIndex = CMVideoFormatDescriptionGetH264ParameterSetAtIndex(unwrappedFormatDescription, 0, nil, nil, nil, nil)
             print(h264ParameterSetAtIndex)
+            
 
         }
-
-
     }
+
+
     func dumpQueuePrecheck() { // if the main display stops moving for a moment, we want to release the frames in the compression queue.
 
         DispatchQueue.main.async {

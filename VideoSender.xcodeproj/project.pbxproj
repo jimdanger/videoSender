@@ -16,6 +16,26 @@
 		8B59AB7E1F23901D005601DA /* VideoSenderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B59AB7D1F23901D005601DA /* VideoSenderUITests.swift */; };
 		8B5B8F321F2E2F710090CF68 /* ScreenRecorderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B8F311F2E2F710090CF68 /* ScreenRecorderService.swift */; };
 		8BAA3D2E1F2F5AD4009C4EA5 /* PreviewLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAA3D2D1F2F5AD4009C4EA5 /* PreviewLayer.swift */; };
+		8BB6B13C1F30B70F00913323 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB6B13B1F30B70F00913323 /* AppDelegate.swift */; };
+		8BB6B13E1F30B70F00913323 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB6B13D1F30B70F00913323 /* ViewController.swift */; };
+		8BB6B1401F30B70F00913323 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BB6B13F1F30B70F00913323 /* Assets.xcassets */; };
+		8BB6B1431F30B70F00913323 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BB6B1411F30B70F00913323 /* Main.storyboard */; };
+		8BB6B14E1F30B70F00913323 /* VideoReceiverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB6B14D1F30B70F00913323 /* VideoReceiverTests.swift */; };
+		8BB6B1591F30B70F00913323 /* VideoReceiverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB6B1581F30B70F00913323 /* VideoReceiverUITests.swift */; };
+		8BB6B1721F30BB3900913323 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BB6B1671F30BB3900913323 /* Info.plist */; };
+		8BB6B1731F30BB3900913323 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BB6B1671F30BB3900913323 /* Info.plist */; };
+		8BB6B1741F30BB3900913323 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8BB6B1681F30BB3900913323 /* LICENSE.txt */; };
+		8BB6B1751F30BB3900913323 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8BB6B1681F30BB3900913323 /* LICENSE.txt */; };
+		8BB6B1761F30BB3900913323 /* PTChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB6B16C1F30BB3900913323 /* PTChannel.m */; };
+		8BB6B1771F30BB3900913323 /* PTChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB6B16C1F30BB3900913323 /* PTChannel.m */; };
+		8BB6B1781F30BB3900913323 /* PTProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB6B16F1F30BB3900913323 /* PTProtocol.m */; };
+		8BB6B1791F30BB3900913323 /* PTProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB6B16F1F30BB3900913323 /* PTProtocol.m */; };
+		8BB6B17A1F30BB3900913323 /* PTUSBHub.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB6B1711F30BB3900913323 /* PTUSBHub.m */; };
+		8BB6B17B1F30BB3900913323 /* PTUSBHub.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB6B1711F30BB3900913323 /* PTUSBHub.m */; };
+		8BB6B17F1F30BB4C00913323 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB6B17C1F30BB4C00913323 /* Helper.swift */; };
+		8BB6B1801F30BB4C00913323 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB6B17C1F30BB4C00913323 /* Helper.swift */; };
+		8BB6B1811F30BB4C00913323 /* PTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB6B17E1F30BB4C00913323 /* PTManager.swift */; };
+		8BB6B1821F30BB4C00913323 /* PTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB6B17E1F30BB4C00913323 /* PTManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +52,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 8B59AB5C1F23901D005601DA;
 			remoteInfo = VideoSender;
+		};
+		8BB6B14A1F30B70F00913323 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B59AB551F23901D005601DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8BB6B1381F30B70F00913323;
+			remoteInfo = VideoReceiver;
+		};
+		8BB6B1551F30B70F00913323 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B59AB551F23901D005601DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8BB6B1381F30B70F00913323;
+			remoteInfo = VideoReceiver;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -51,6 +85,32 @@
 		8B59AB7F1F23901D005601DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B5B8F311F2E2F710090CF68 /* ScreenRecorderService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenRecorderService.swift; sourceTree = "<group>"; };
 		8BAA3D2D1F2F5AD4009C4EA5 /* PreviewLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewLayer.swift; sourceTree = "<group>"; };
+		8BB6B1391F30B70F00913323 /* VideoReceiver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoReceiver.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BB6B13B1F30B70F00913323 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8BB6B13D1F30B70F00913323 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8BB6B13F1F30B70F00913323 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8BB6B1421F30B70F00913323 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8BB6B1441F30B70F00913323 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BB6B1491F30B70F00913323 /* VideoReceiverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoReceiverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BB6B14D1F30B70F00913323 /* VideoReceiverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoReceiverTests.swift; sourceTree = "<group>"; };
+		8BB6B14F1F30B70F00913323 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BB6B1541F30B70F00913323 /* VideoReceiverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoReceiverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BB6B1581F30B70F00913323 /* VideoReceiverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoReceiverUITests.swift; sourceTree = "<group>"; };
+		8BB6B15A1F30B70F00913323 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BB6B1671F30BB3900913323 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BB6B1681F30BB3900913323 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		8BB6B1691F30BB3900913323 /* Peertalk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Peertalk.h; sourceTree = "<group>"; };
+		8BB6B16A1F30BB3900913323 /* prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prefix.pch; sourceTree = "<group>"; };
+		8BB6B16B1F30BB3900913323 /* PTChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTChannel.h; sourceTree = "<group>"; };
+		8BB6B16C1F30BB3900913323 /* PTChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTChannel.m; sourceTree = "<group>"; };
+		8BB6B16D1F30BB3900913323 /* PTPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPrivate.h; sourceTree = "<group>"; };
+		8BB6B16E1F30BB3900913323 /* PTProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTProtocol.h; sourceTree = "<group>"; };
+		8BB6B16F1F30BB3900913323 /* PTProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTProtocol.m; sourceTree = "<group>"; };
+		8BB6B1701F30BB3900913323 /* PTUSBHub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTUSBHub.h; sourceTree = "<group>"; };
+		8BB6B1711F30BB3900913323 /* PTUSBHub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTUSBHub.m; sourceTree = "<group>"; };
+		8BB6B17C1F30BB4C00913323 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		8BB6B17D1F30BB4C00913323 /* VideoReceiver-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VideoReceiver-Bridging-Header.h"; sourceTree = "<group>"; };
+		8BB6B17E1F30BB4C00913323 /* PTManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,15 +135,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8BB6B1361F30B70F00913323 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BB6B1461F30B70F00913323 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BB6B1511F30B70F00913323 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		8B59AB541F23901D005601DA = {
 			isa = PBXGroup;
 			children = (
-				8B59AB5F1F23901D005601DA /* VideoSender */,
-				8B59AB711F23901D005601DA /* VideoSenderTests */,
-				8B59AB7C1F23901D005601DA /* VideoSenderUITests */,
+				8BB6B1831F30BB7500913323 /* peertalk */,
+				8BB6B1661F30BB3900913323 /* peerTalkSimple */,
+				8BB6B1641F30B72200913323 /* Sender */,
+				8BB6B1651F30B72A00913323 /* Receiver */,
 				8B59AB5E1F23901D005601DA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,6 +176,9 @@
 				8B59AB5D1F23901D005601DA /* VideoSender.app */,
 				8B59AB6E1F23901D005601DA /* VideoSenderTests.xctest */,
 				8B59AB791F23901D005601DA /* VideoSenderUITests.xctest */,
+				8BB6B1391F30B70F00913323 /* VideoReceiver.app */,
+				8BB6B1491F30B70F00913323 /* VideoReceiverTests.xctest */,
+				8BB6B1541F30B70F00913323 /* VideoReceiverUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -137,6 +222,85 @@
 			children = (
 			);
 			name = IdeaMovieFile;
+			sourceTree = "<group>";
+		};
+		8BB6B13A1F30B70F00913323 /* VideoReceiver */ = {
+			isa = PBXGroup;
+			children = (
+				8BB6B13B1F30B70F00913323 /* AppDelegate.swift */,
+				8BB6B13D1F30B70F00913323 /* ViewController.swift */,
+				8BB6B13F1F30B70F00913323 /* Assets.xcassets */,
+				8BB6B1411F30B70F00913323 /* Main.storyboard */,
+				8BB6B1441F30B70F00913323 /* Info.plist */,
+			);
+			path = VideoReceiver;
+			sourceTree = "<group>";
+		};
+		8BB6B14C1F30B70F00913323 /* VideoReceiverTests */ = {
+			isa = PBXGroup;
+			children = (
+				8BB6B14D1F30B70F00913323 /* VideoReceiverTests.swift */,
+				8BB6B14F1F30B70F00913323 /* Info.plist */,
+			);
+			path = VideoReceiverTests;
+			sourceTree = "<group>";
+		};
+		8BB6B1571F30B70F00913323 /* VideoReceiverUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8BB6B1581F30B70F00913323 /* VideoReceiverUITests.swift */,
+				8BB6B15A1F30B70F00913323 /* Info.plist */,
+			);
+			path = VideoReceiverUITests;
+			sourceTree = "<group>";
+		};
+		8BB6B1641F30B72200913323 /* Sender */ = {
+			isa = PBXGroup;
+			children = (
+				8B59AB5F1F23901D005601DA /* VideoSender */,
+				8B59AB711F23901D005601DA /* VideoSenderTests */,
+				8B59AB7C1F23901D005601DA /* VideoSenderUITests */,
+			);
+			name = Sender;
+			sourceTree = "<group>";
+		};
+		8BB6B1651F30B72A00913323 /* Receiver */ = {
+			isa = PBXGroup;
+			children = (
+				8BB6B13A1F30B70F00913323 /* VideoReceiver */,
+				8BB6B14C1F30B70F00913323 /* VideoReceiverTests */,
+				8BB6B1571F30B70F00913323 /* VideoReceiverUITests */,
+			);
+			name = Receiver;
+			sourceTree = "<group>";
+		};
+		8BB6B1661F30BB3900913323 /* peerTalkSimple */ = {
+			isa = PBXGroup;
+			children = (
+				8BB6B17C1F30BB4C00913323 /* Helper.swift */,
+				8BB6B17D1F30BB4C00913323 /* VideoReceiver-Bridging-Header.h */,
+				8BB6B17E1F30BB4C00913323 /* PTManager.swift */,
+			);
+			name = peerTalkSimple;
+			path = peertalk;
+			sourceTree = "<group>";
+		};
+		8BB6B1831F30BB7500913323 /* peertalk */ = {
+			isa = PBXGroup;
+			children = (
+				8BB6B1671F30BB3900913323 /* Info.plist */,
+				8BB6B1681F30BB3900913323 /* LICENSE.txt */,
+				8BB6B1691F30BB3900913323 /* Peertalk.h */,
+				8BB6B16A1F30BB3900913323 /* prefix.pch */,
+				8BB6B16B1F30BB3900913323 /* PTChannel.h */,
+				8BB6B16C1F30BB3900913323 /* PTChannel.m */,
+				8BB6B16D1F30BB3900913323 /* PTPrivate.h */,
+				8BB6B16E1F30BB3900913323 /* PTProtocol.h */,
+				8BB6B16F1F30BB3900913323 /* PTProtocol.m */,
+				8BB6B1701F30BB3900913323 /* PTUSBHub.h */,
+				8BB6B1711F30BB3900913323 /* PTUSBHub.m */,
+			);
+			path = peertalk;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +359,59 @@
 			productReference = 8B59AB791F23901D005601DA /* VideoSenderUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		8BB6B1381F30B70F00913323 /* VideoReceiver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BB6B1611F30B70F00913323 /* Build configuration list for PBXNativeTarget "VideoReceiver" */;
+			buildPhases = (
+				8BB6B1351F30B70F00913323 /* Sources */,
+				8BB6B1361F30B70F00913323 /* Frameworks */,
+				8BB6B1371F30B70F00913323 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VideoReceiver;
+			productName = VideoReceiver;
+			productReference = 8BB6B1391F30B70F00913323 /* VideoReceiver.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8BB6B1481F30B70F00913323 /* VideoReceiverTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BB6B1621F30B70F00913323 /* Build configuration list for PBXNativeTarget "VideoReceiverTests" */;
+			buildPhases = (
+				8BB6B1451F30B70F00913323 /* Sources */,
+				8BB6B1461F30B70F00913323 /* Frameworks */,
+				8BB6B1471F30B70F00913323 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8BB6B14B1F30B70F00913323 /* PBXTargetDependency */,
+			);
+			name = VideoReceiverTests;
+			productName = VideoReceiverTests;
+			productReference = 8BB6B1491F30B70F00913323 /* VideoReceiverTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8BB6B1531F30B70F00913323 /* VideoReceiverUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BB6B1631F30B70F00913323 /* Build configuration list for PBXNativeTarget "VideoReceiverUITests" */;
+			buildPhases = (
+				8BB6B1501F30B70F00913323 /* Sources */,
+				8BB6B1511F30B70F00913323 /* Frameworks */,
+				8BB6B1521F30B70F00913323 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8BB6B1561F30B70F00913323 /* PBXTargetDependency */,
+			);
+			name = VideoReceiverUITests;
+			productName = VideoReceiverUITests;
+			productReference = 8BB6B1541F30B70F00913323 /* VideoReceiverUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -222,6 +439,23 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 8B59AB5C1F23901D005601DA;
 					};
+					8BB6B1381F30B70F00913323 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 5MFLP3AQ7C;
+						ProvisioningStyle = Automatic;
+					};
+					8BB6B1481F30B70F00913323 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 5MFLP3AQ7C;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8BB6B1381F30B70F00913323;
+					};
+					8BB6B1531F30B70F00913323 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 5MFLP3AQ7C;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8BB6B1381F30B70F00913323;
+					};
 				};
 			};
 			buildConfigurationList = 8B59AB581F23901D005601DA /* Build configuration list for PBXProject "VideoSender" */;
@@ -240,6 +474,9 @@
 				8B59AB5C1F23901D005601DA /* VideoSender */,
 				8B59AB6D1F23901D005601DA /* VideoSenderTests */,
 				8B59AB781F23901D005601DA /* VideoSenderUITests */,
+				8BB6B1381F30B70F00913323 /* VideoReceiver */,
+				8BB6B1481F30B70F00913323 /* VideoReceiverTests */,
+				8BB6B1531F30B70F00913323 /* VideoReceiverUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -249,8 +486,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BB6B1741F30BB3900913323 /* LICENSE.txt in Resources */,
 				8B59AB651F23901D005601DA /* Assets.xcassets in Resources */,
 				8B59AB681F23901D005601DA /* Main.storyboard in Resources */,
+				8BB6B1721F30BB3900913323 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +507,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8BB6B1371F30B70F00913323 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BB6B1751F30BB3900913323 /* LICENSE.txt in Resources */,
+				8BB6B1401F30B70F00913323 /* Assets.xcassets in Resources */,
+				8BB6B1431F30B70F00913323 /* Main.storyboard in Resources */,
+				8BB6B1731F30BB3900913323 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BB6B1471F30B70F00913323 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BB6B1521F30B70F00913323 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -276,10 +540,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BAA3D2E1F2F5AD4009C4EA5 /* PreviewLayer.swift in Sources */,
+				8BB6B1761F30BB3900913323 /* PTChannel.m in Sources */,
+				8BB6B17A1F30BB3900913323 /* PTUSBHub.m in Sources */,
+				8BB6B1811F30BB4C00913323 /* PTManager.swift in Sources */,
 				8B59AB631F23901D005601DA /* ViewController.swift in Sources */,
 				8B39E73A1F2F545800DE5CCE /* SendPreviewWindowController.swift in Sources */,
+				8BB6B17F1F30BB4C00913323 /* Helper.swift in Sources */,
 				8B5B8F321F2E2F710090CF68 /* ScreenRecorderService.swift in Sources */,
 				8B59AB611F23901D005601DA /* AppDelegate.swift in Sources */,
+				8BB6B1781F30BB3900913323 /* PTProtocol.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +568,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8BB6B1351F30B70F00913323 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BB6B13E1F30B70F00913323 /* ViewController.swift in Sources */,
+				8BB6B1791F30BB3900913323 /* PTProtocol.m in Sources */,
+				8BB6B1771F30BB3900913323 /* PTChannel.m in Sources */,
+				8BB6B17B1F30BB3900913323 /* PTUSBHub.m in Sources */,
+				8BB6B1821F30BB4C00913323 /* PTManager.swift in Sources */,
+				8BB6B13C1F30B70F00913323 /* AppDelegate.swift in Sources */,
+				8BB6B1801F30BB4C00913323 /* Helper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BB6B1451F30B70F00913323 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BB6B14E1F30B70F00913323 /* VideoReceiverTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BB6B1501F30B70F00913323 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BB6B1591F30B70F00913323 /* VideoReceiverUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -312,6 +611,16 @@
 			target = 8B59AB5C1F23901D005601DA /* VideoSender */;
 			targetProxy = 8B59AB7A1F23901D005601DA /* PBXContainerItemProxy */;
 		};
+		8BB6B14B1F30B70F00913323 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8BB6B1381F30B70F00913323 /* VideoReceiver */;
+			targetProxy = 8BB6B14A1F30B70F00913323 /* PBXContainerItemProxy */;
+		};
+		8BB6B1561F30B70F00913323 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8BB6B1381F30B70F00913323 /* VideoReceiver */;
+			targetProxy = 8BB6B1551F30B70F00913323 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -319,6 +628,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				8B59AB671F23901D005601DA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8BB6B1411F30B70F00913323 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8BB6B1421F30B70F00913323 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -372,6 +689,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "peertalk/VideoReceiver-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -414,6 +732,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "peertalk/VideoReceiver-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
@@ -508,6 +827,96 @@
 			};
 			name = Release;
 		};
+		8BB6B15B1F30B70F00913323 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5MFLP3AQ7C;
+				INFOPLIST_FILE = VideoReceiver/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-jimdanger.VideoReceiver";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		8BB6B15C1F30B70F00913323 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5MFLP3AQ7C;
+				INFOPLIST_FILE = VideoReceiver/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-jimdanger.VideoReceiver";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		8BB6B15D1F30B70F00913323 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5MFLP3AQ7C;
+				INFOPLIST_FILE = VideoReceiverTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-jimdanger.VideoReceiverTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VideoReceiver.app/Contents/MacOS/VideoReceiver";
+			};
+			name = Debug;
+		};
+		8BB6B15E1F30B70F00913323 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5MFLP3AQ7C;
+				INFOPLIST_FILE = VideoReceiverTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-jimdanger.VideoReceiverTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VideoReceiver.app/Contents/MacOS/VideoReceiver";
+			};
+			name = Release;
+		};
+		8BB6B15F1F30B70F00913323 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5MFLP3AQ7C;
+				INFOPLIST_FILE = VideoReceiverUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-jimdanger.VideoReceiverUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = VideoReceiver;
+			};
+			name = Debug;
+		};
+		8BB6B1601F30B70F00913323 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5MFLP3AQ7C;
+				INFOPLIST_FILE = VideoReceiverUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-jimdanger.VideoReceiverUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = VideoReceiver;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -546,6 +955,30 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		8BB6B1611F30B70F00913323 /* Build configuration list for PBXNativeTarget "VideoReceiver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BB6B15B1F30B70F00913323 /* Debug */,
+				8BB6B15C1F30B70F00913323 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8BB6B1621F30B70F00913323 /* Build configuration list for PBXNativeTarget "VideoReceiverTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BB6B15D1F30B70F00913323 /* Debug */,
+				8BB6B15E1F30B70F00913323 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8BB6B1631F30B70F00913323 /* Build configuration list for PBXNativeTarget "VideoReceiverUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BB6B15F1F30B70F00913323 /* Debug */,
+				8BB6B1601F30B70F00913323 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
