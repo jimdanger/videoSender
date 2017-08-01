@@ -13,14 +13,13 @@ import CoreMedia
 
 
 
-class ScreenRecorderService: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
+class ScreenRecorderService: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, PTManagerDelegate {
 
     var x = 0
     var timeStampValue: Int64 = 0
     var dumpFramesInCompressionQueueTimer: Timer?
     var displayStream: CGDisplayStream?
     let backgroundQueue = DispatchQueue(label: "com.jimdanger.app.queue", qos: .background, target: nil)
-
 
     var compressionSesionOut: UnsafeMutablePointer<VTCompressionSession?>
     var vtCompressionSession: VTCompressionSession
@@ -47,6 +46,8 @@ class ScreenRecorderService: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
 
         // TODO: play with these properties ^^ to possibly improve performance.
 
+
+
         super.init()
 
         displayStream = CGDisplayStream(dispatchQueueDisplay: displayId, outputWidth: Int(width), outputHeight: Int(height), pixelFormat: Int32(k32BGRAPixelFormat), properties: nil, queue: backgroundQueue, handler: { (cgDisplayStreamFrameStatus, uInt64, iOSurfaceRef, cGDisplayStreamUpdate) in
@@ -65,6 +66,8 @@ class ScreenRecorderService: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
 
     func start(){
         displayStream?.start()
+        PTManager.instance.delegate = self
+        PTManager.instance.connect(portNumber: PORT_NUMBER)
     }
 
     func stop() {
@@ -135,11 +138,34 @@ class ScreenRecorderService: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
         if let unwrappedFormatDescription = formatDescription {
             let h264ParameterSetAtIndex = CMVideoFormatDescriptionGetH264ParameterSetAtIndex(unwrappedFormatDescription, 0, nil, nil, nil, nil)
             print(h264ParameterSetAtIndex)
-            
 
         }
+
+        sendSomethingToReceiver()
     }
 
+
+    func sendSomethingToReceiver() { // temp method just to test pipeline
+
+
+        PTManager.instance.sendObject(object: self.x, type: PTType.number.rawValue)
+        print("") 
+
+    }
+
+    func peertalk(shouldAcceptDataOfType type: UInt32) -> Bool {
+        return true
+    }
+
+
+    func peertalk(didReceiveData data: Data, ofType type: UInt32) {
+        print("sender- didReceiveData")
+    }
+
+
+    func peertalk(didChangeConnection connected: Bool) {
+        print("sender- didChangeConnection")
+    }
 
     func dumpQueuePrecheck() { // if the main display stops moving for a moment, we want to release the frames in the compression queue.
 

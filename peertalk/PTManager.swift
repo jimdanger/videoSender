@@ -22,12 +22,12 @@ protocol PTManagerDelegate {
     
 }
 
-#if os(iOS)
-// MARK: - iOS
+
+
     
-    class PTManager: NSObject {
+    class PTManagerReceiver: NSObject {
         
-        static let instance = PTManager()
+        static let instance = PTManagerReceiver()
         
         // MARK: Properties
         var delegate: PTManagerDelegate?
@@ -116,7 +116,7 @@ protocol PTManagerDelegate {
     
     
     // MARK: - Channel Delegate
-    extension PTManager: PTChannelDelegate {
+    extension PTManagerReceiver: PTChannelDelegate {
         
         func ioFrameChannel(_ channel: PTChannel!, shouldAcceptFrameOfType type: UInt32, tag: UInt32, payloadSize: UInt32) -> Bool {
             // Check if the channel is our connected channel; otherwise ignore it
@@ -165,9 +165,8 @@ protocol PTManagerDelegate {
     
     
     
-#elseif os(OSX)
-// MARK: - OS X
-    
+
+
     class PTManager: NSObject {
         
         static var instance = PTManager()
@@ -384,7 +383,7 @@ protocol PTManagerDelegate {
             
             fileprivate func connectToLocalIPv4Port() {
                 let channel = PTChannel(delegate: self)
-                channel?.userInfo = "127.0.0.1:\(portNumber ?? -1)"
+                channel?.userInfo = "127.0.0.1::\(portNumber ?? -1)"
                 
                 channel?.connect(toPort: in_port_t(portNumber!), iPv4Address: INADDR_LOOPBACK, callback: { (error, address) in
                     if error == nil {
@@ -436,9 +435,6 @@ protocol PTManagerDelegate {
             
         }
     
-    
-#endif
-
 
 
 

@@ -17,7 +17,7 @@
 		8B5B8F321F2E2F710090CF68 /* ScreenRecorderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B8F311F2E2F710090CF68 /* ScreenRecorderService.swift */; };
 		8BAA3D2E1F2F5AD4009C4EA5 /* PreviewLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAA3D2D1F2F5AD4009C4EA5 /* PreviewLayer.swift */; };
 		8BB6B13C1F30B70F00913323 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB6B13B1F30B70F00913323 /* AppDelegate.swift */; };
-		8BB6B13E1F30B70F00913323 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB6B13D1F30B70F00913323 /* ViewController.swift */; };
+		8BB6B13E1F30B70F00913323 /* ReceiverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB6B13D1F30B70F00913323 /* ReceiverViewController.swift */; };
 		8BB6B1401F30B70F00913323 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BB6B13F1F30B70F00913323 /* Assets.xcassets */; };
 		8BB6B1431F30B70F00913323 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BB6B1411F30B70F00913323 /* Main.storyboard */; };
 		8BB6B14E1F30B70F00913323 /* VideoReceiverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB6B14D1F30B70F00913323 /* VideoReceiverTests.swift */; };
@@ -87,7 +87,7 @@
 		8BAA3D2D1F2F5AD4009C4EA5 /* PreviewLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewLayer.swift; sourceTree = "<group>"; };
 		8BB6B1391F30B70F00913323 /* VideoReceiver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoReceiver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BB6B13B1F30B70F00913323 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8BB6B13D1F30B70F00913323 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8BB6B13D1F30B70F00913323 /* ReceiverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiverViewController.swift; sourceTree = "<group>"; };
 		8BB6B13F1F30B70F00913323 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8BB6B1421F30B70F00913323 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8BB6B1441F30B70F00913323 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -162,8 +162,7 @@
 		8B59AB541F23901D005601DA = {
 			isa = PBXGroup;
 			children = (
-				8BB6B1831F30BB7500913323 /* peertalk */,
-				8BB6B1661F30BB3900913323 /* peerTalkSimple */,
+				8BB6B1841F30C45200913323 /* libraries */,
 				8BB6B1641F30B72200913323 /* Sender */,
 				8BB6B1651F30B72A00913323 /* Receiver */,
 				8B59AB5E1F23901D005601DA /* Products */,
@@ -188,9 +187,7 @@
 			children = (
 				8B59AB601F23901D005601DA /* AppDelegate.swift */,
 				8B59AB621F23901D005601DA /* ViewController.swift */,
-				8B39E7381F2F545800DE5CCE /* SendPreviewWindowController.swift */,
-				8BAA3D2D1F2F5AD4009C4EA5 /* PreviewLayer.swift */,
-				8B5B8F331F2E35A70090CF68 /* IdeaMovieFile */,
+				8BB6B1851F30D79600913323 /* Preview - before sending */,
 				8B5B8F311F2E2F710090CF68 /* ScreenRecorderService.swift */,
 				8B59AB641F23901D005601DA /* Assets.xcassets */,
 				8B59AB661F23901D005601DA /* Main.storyboard */,
@@ -217,18 +214,11 @@
 			path = VideoSenderUITests;
 			sourceTree = "<group>";
 		};
-		8B5B8F331F2E35A70090CF68 /* IdeaMovieFile */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = IdeaMovieFile;
-			sourceTree = "<group>";
-		};
 		8BB6B13A1F30B70F00913323 /* VideoReceiver */ = {
 			isa = PBXGroup;
 			children = (
 				8BB6B13B1F30B70F00913323 /* AppDelegate.swift */,
-				8BB6B13D1F30B70F00913323 /* ViewController.swift */,
+				8BB6B13D1F30B70F00913323 /* ReceiverViewController.swift */,
 				8BB6B13F1F30B70F00913323 /* Assets.xcassets */,
 				8BB6B1411F30B70F00913323 /* Main.storyboard */,
 				8BB6B1441F30B70F00913323 /* Info.plist */,
@@ -301,6 +291,24 @@
 				8BB6B1711F30BB3900913323 /* PTUSBHub.m */,
 			);
 			path = peertalk;
+			sourceTree = "<group>";
+		};
+		8BB6B1841F30C45200913323 /* libraries */ = {
+			isa = PBXGroup;
+			children = (
+				8BB6B1831F30BB7500913323 /* peertalk */,
+				8BB6B1661F30BB3900913323 /* peerTalkSimple */,
+			);
+			name = libraries;
+			sourceTree = "<group>";
+		};
+		8BB6B1851F30D79600913323 /* Preview - before sending */ = {
+			isa = PBXGroup;
+			children = (
+				8B39E7381F2F545800DE5CCE /* SendPreviewWindowController.swift */,
+				8BAA3D2D1F2F5AD4009C4EA5 /* PreviewLayer.swift */,
+			);
+			name = "Preview - before sending";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -572,7 +580,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BB6B13E1F30B70F00913323 /* ViewController.swift in Sources */,
+				8BB6B13E1F30B70F00913323 /* ReceiverViewController.swift in Sources */,
 				8BB6B1791F30BB3900913323 /* PTProtocol.m in Sources */,
 				8BB6B1771F30BB3900913323 /* PTChannel.m in Sources */,
 				8BB6B17B1F30BB3900913323 /* PTUSBHub.m in Sources */,
@@ -963,6 +971,7 @@
 				8BB6B15C1F30B70F00913323 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8BB6B1621F30B70F00913323 /* Build configuration list for PBXNativeTarget "VideoReceiverTests" */ = {
 			isa = XCConfigurationList;
@@ -971,6 +980,7 @@
 				8BB6B15E1F30B70F00913323 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8BB6B1631F30B70F00913323 /* Build configuration list for PBXNativeTarget "VideoReceiverUITests" */ = {
 			isa = XCConfigurationList;
@@ -979,6 +989,7 @@
 				8BB6B1601F30B70F00913323 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
