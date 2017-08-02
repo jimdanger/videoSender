@@ -115,10 +115,8 @@ class ScreenRecorderService: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
     }
 
     func doSomethingWithCMSampleBuffers(cMSampleBuffer: CMSampleBuffer){
-
-
         previewSampleBuffersInThisAppBeforeSendingToOtherApp(cMSampleBuffer: cMSampleBuffer)
-        convertCMSampleBuffersToElemtaryStream(cMSampleBuffer: cMSampleBuffer)
+        convertCMSampleBuffersToElemtaryStream(frame: cMSampleBuffer)
         dumpQueuePrecheck()
     }
 
@@ -130,28 +128,90 @@ class ScreenRecorderService: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
         self.checkIfHanging()
     }
 
-    func convertCMSampleBuffersToElemtaryStream(cMSampleBuffer: CMSampleBuffer) {
+    public func convertCMSampleBuffersToElemtaryStream(frame: CMSampleBuffer)
+    {
+        print ("Received encoded frame in delegate...")
 
-        let formatDescription: CMVideoFormatDescription? =  CMSampleBufferGetFormatDescription(cMSampleBuffer)
+        //----AVCC to Elem stream-----//
+        let elementaryStream = NSMutableData()
 
+        //1. check if CMBuffer had I-frame
+        var isIFrame: Bool = false
 
-        if let unwrappedFormatDescription = formatDescription {
-            let h264ParameterSetAtIndex = CMVideoFormatDescriptionGetH264ParameterSetAtIndex(unwrappedFormatDescription, 0, nil, nil, nil, nil)
-            print(h264ParameterSetAtIndex)
+        guard let attachmentsArray: CFArray = CMSampleBufferGetSampleAttachmentsArray(frame, false) else {
+            print("attachmentsArray null")
+            return
 
         }
+        //check how many attachments
+        if ( CFArrayGetCount(attachmentsArray) > 0 ) {
+            let dict = CFArrayGetValueAtIndex(attachmentsArray, 0)
+            let dictRef: CFDictionary = unsafeBitCast(dict, to: CFDictionary.self)
+            //get value
+            let value = CFDictionaryGetValue(dictRef, unsafeBitCast(kCMSampleAttachmentKey_NotSync, to: UnsafeRawPointer.self))
+            if ( value != nil ){
+                print ("IFrame found...")
+                isIFrame = true
+            }
+        }
 
-        sendSomethingToReceiver()
+        //2. define the start code
+        let nStartCodeLength:size_t = 4
+        let nStartCode:[UInt8] = [0x00, 0x00, 0x00, 0x01]
+
+        //3. write the SPS and PPS before I-frame
+        if ( isIFrame == true ){
+            let description:CMFormatDescription = CMSampleBufferGetFormatDescription(frame)!
+            //how many params
+            var numParams:size_t = 0
+            CMVideoFormatDescriptionGetH264ParameterSetAtIndex(description, 0, nil, nil, &numParams, nil)
+
+            //write each param-set to elementary stream
+            print("Write param to elementaryStream ", numParams)
+            for i in 0..<numParams {
+                var parameterSetPointer:UnsafePointer<UInt8>? = nil
+                var parameterSetLength:size_t = 0
+                CMVideoFormatDescriptionGetH264ParameterSetAtIndex(description, i, &parameterSetPointer, &parameterSetLength, nil, nil)
+                elementaryStream.append(nStartCode, length: nStartCodeLength)
+                elementaryStream.append(parameterSetPointer!, length: parameterSetLength)
+            }
+        }
+
+        //4. Get a pointer to the raw AVCC NAL unit data in the sample buffer
+        var blockBufferLength:size_t = 0
+        var bufferDataPointer: UnsafeMutablePointer<Int8>? = nil
+        CMBlockBufferGetDataPointer(CMSampleBufferGetDataBuffer(frame)!, 0, nil, &blockBufferLength, &bufferDataPointer)
+        print ("Block length = ", blockBufferLength)
+
+        //5. Loop through all the NAL units in the block buffer
+        var bufferOffset:size_t = 0
+        let AVCCHeaderLength:Int = 4
+        while (bufferOffset < (blockBufferLength - AVCCHeaderLength) ) {
+            // Read the NAL unit length
+            var NALUnitLength:UInt32 =  0
+            memcpy(&NALUnitLength, bufferDataPointer! + bufferOffset, AVCCHeaderLength)
+            //Big-Endian to Little-Endian
+            NALUnitLength = CFSwapInt32(NALUnitLength)
+            if ( NALUnitLength > 0 ){
+                print ( "NALUnitLen = ", NALUnitLength)
+                // Write start code to the elementary stream
+                elementaryStream.append(nStartCode, length: nStartCodeLength)
+                // Write the NAL unit without the AVCC length header to the elementary stream
+                elementaryStream.append(bufferDataPointer! + bufferOffset + AVCCHeaderLength, length: Int(NALUnitLength))
+                // Move to the next NAL unit in the block buffer
+                bufferOffset += AVCCHeaderLength + size_t(NALUnitLength);
+                print("Moving to next NALU...")
+            }
+        }
+        print("Read completed...")
+        sendElementarySteam(elementaryStream: elementaryStream)
     }
 
-
-    func sendSomethingToReceiver() { // temp method just to test pipeline
-
-
-        PTManager.instance.sendObject(object: self.x, type: PTType.number.rawValue)
-        print("") 
-
+    func sendElementarySteam(elementaryStream: NSMutableData) {
+        let elementaryStreamData = elementaryStream as Data
+        PTManager.instance.sendData(data: elementaryStreamData, type: PTType.elementarystream.rawValue)
     }
+
 
     func peertalk(shouldAcceptDataOfType type: UInt32) -> Bool {
         return true

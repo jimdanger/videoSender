@@ -10,7 +10,6 @@ import Cocoa
 
 class ReceiverViewController: NSViewController, PTManagerDelegate {
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,9 +25,9 @@ class ReceiverViewController: NSViewController, PTManagerDelegate {
     }
 
 
-    @IBAction func asdf(_ sender: Any) {
+    @IBAction func asdf(_ sender: Any) { // temporary to force a breakpoint
 
-        print("asdf")
+        print("put breakpoint here to freeze app on button press")
     }
 
     // MARK: - PTManagerDelegate methods:
@@ -38,13 +37,29 @@ class ReceiverViewController: NSViewController, PTManagerDelegate {
 
 
     func peertalk(didReceiveData data: Data, ofType type: UInt32){
-        print("receivedData")
+        switch type {
+        case PTType.number.rawValue:
+            print("number")
+            print(data.convert())
+            break
+        case PTType.cmsamplebuffer.rawValue:
+            print("cmsamplebuffer")
+            print(data.convert())
+            break
+        case PTType.elementarystream.rawValue:
+            print("elementarystream")
+//            print(data.convert())
+            break
+        default:
+            print("default")
+            break
+        }
     }
 
 
 
     func peertalk(didChangeConnection connected: Bool) {
-        print("didChangeConnection")
+        print("receiver - didChangeConnection")
 
     }
 
