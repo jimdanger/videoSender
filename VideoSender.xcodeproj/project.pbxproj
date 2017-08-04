@@ -15,7 +15,9 @@
 		8B59AB731F23901D005601DA /* VideoSenderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B59AB721F23901D005601DA /* VideoSenderTests.swift */; };
 		8B59AB7E1F23901D005601DA /* VideoSenderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B59AB7D1F23901D005601DA /* VideoSenderUITests.swift */; };
 		8B5B8F321F2E2F710090CF68 /* ScreenRecorderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B8F311F2E2F710090CF68 /* ScreenRecorderService.swift */; };
-		8BAA3D2E1F2F5AD4009C4EA5 /* PreviewLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAA3D2D1F2F5AD4009C4EA5 /* PreviewLayer.swift */; };
+		8BAA3D2E1F2F5AD4009C4EA5 /* DisplayLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAA3D2D1F2F5AD4009C4EA5 /* DisplayLayer.swift */; };
+		8BB1AF2F1F3210DD009F940F /* DisplayLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAA3D2D1F2F5AD4009C4EA5 /* DisplayLayer.swift */; };
+		8BB1AF301F3210EA009F940F /* ElementaryStreamDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB1AF2D1F320E2C009F940F /* ElementaryStreamDecoder.swift */; };
 		8BB6B13C1F30B70F00913323 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB6B13B1F30B70F00913323 /* AppDelegate.swift */; };
 		8BB6B13E1F30B70F00913323 /* ReceiverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB6B13D1F30B70F00913323 /* ReceiverViewController.swift */; };
 		8BB6B1401F30B70F00913323 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BB6B13F1F30B70F00913323 /* Assets.xcassets */; };
@@ -84,7 +86,8 @@
 		8B59AB7D1F23901D005601DA /* VideoSenderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSenderUITests.swift; sourceTree = "<group>"; };
 		8B59AB7F1F23901D005601DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B5B8F311F2E2F710090CF68 /* ScreenRecorderService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenRecorderService.swift; sourceTree = "<group>"; };
-		8BAA3D2D1F2F5AD4009C4EA5 /* PreviewLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewLayer.swift; sourceTree = "<group>"; };
+		8BAA3D2D1F2F5AD4009C4EA5 /* DisplayLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayLayer.swift; sourceTree = "<group>"; };
+		8BB1AF2D1F320E2C009F940F /* ElementaryStreamDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementaryStreamDecoder.swift; sourceTree = "<group>"; };
 		8BB6B1391F30B70F00913323 /* VideoReceiver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoReceiver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BB6B13B1F30B70F00913323 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BB6B13D1F30B70F00913323 /* ReceiverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiverViewController.swift; sourceTree = "<group>"; };
@@ -219,6 +222,7 @@
 			children = (
 				8BB6B13B1F30B70F00913323 /* AppDelegate.swift */,
 				8BB6B13D1F30B70F00913323 /* ReceiverViewController.swift */,
+				8BB1AF2D1F320E2C009F940F /* ElementaryStreamDecoder.swift */,
 				8BB6B13F1F30B70F00913323 /* Assets.xcassets */,
 				8BB6B1411F30B70F00913323 /* Main.storyboard */,
 				8BB6B1441F30B70F00913323 /* Info.plist */,
@@ -306,7 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				8B39E7381F2F545800DE5CCE /* SendPreviewWindowController.swift */,
-				8BAA3D2D1F2F5AD4009C4EA5 /* PreviewLayer.swift */,
+				8BAA3D2D1F2F5AD4009C4EA5 /* DisplayLayer.swift */,
 			);
 			name = "Preview - before sending";
 			sourceTree = "<group>";
@@ -547,7 +551,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BAA3D2E1F2F5AD4009C4EA5 /* PreviewLayer.swift in Sources */,
+				8BAA3D2E1F2F5AD4009C4EA5 /* DisplayLayer.swift in Sources */,
 				8BB6B1761F30BB3900913323 /* PTChannel.m in Sources */,
 				8BB6B17A1F30BB3900913323 /* PTUSBHub.m in Sources */,
 				8BB6B1811F30BB4C00913323 /* PTManager.swift in Sources */,
@@ -580,12 +584,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BB1AF2F1F3210DD009F940F /* DisplayLayer.swift in Sources */,
 				8BB6B13E1F30B70F00913323 /* ReceiverViewController.swift in Sources */,
 				8BB6B1791F30BB3900913323 /* PTProtocol.m in Sources */,
 				8BB6B1771F30BB3900913323 /* PTChannel.m in Sources */,
 				8BB6B17B1F30BB3900913323 /* PTUSBHub.m in Sources */,
 				8BB6B1821F30BB4C00913323 /* PTManager.swift in Sources */,
 				8BB6B13C1F30B70F00913323 /* AppDelegate.swift in Sources */,
+				8BB1AF301F3210EA009F940F /* ElementaryStreamDecoder.swift in Sources */,
 				8BB6B1801F30BB4C00913323 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,7 +12,7 @@ import AVFoundation
 import AVKit
 
 
-class PreviewLayer: NSView {
+class DisplayLayer: NSView {
     var aVSampleBufferDisplay: AVSampleBufferDisplayLayer = AVSampleBufferDisplayLayer()
 
 

@@ -43,6 +43,5 @@ enum PTType: UInt32 {
     case number = 100
     case image = 101
     case data = 102
-    case cmsamplebuffer = 103
-    case elementarystream = 104
+    case elementarystream = 103
 }

@@ -13,13 +13,11 @@ import AVKit
 class SendPreviewViewController: NSViewController {
 
 
-    @IBOutlet weak var previewLayer: PreviewLayer!
+    @IBOutlet weak var previewLayer: DisplayLayer!
 
-//    var previewLayer: PreviewLayer?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.wantsLayer = true
-//        previewLayer = PreviewLayer()
         if let pl = previewLayer {
             pl.setup()
             pl.wantsLayer = true 

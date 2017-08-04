@@ -686,7 +686,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="bCc-Fv-nfS" customClass="PreviewLayer" customModule="VideoSender" customModuleProvider="target">
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="bCc-Fv-nfS" customClass="DisplayLayer" customModule="VideoSender" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                             </customView>
                         </subviews>
@@ -698,7 +698,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="previewLayer" destination="bCc-Fv-nfS" id="5iv-bj-yZD"/>
+                        <outlet property="previewLayer" destination="bCc-Fv-nfS" id="WEZ-QQ-dgI"/>
                     </connections>
                 </viewController>
                 <customObject id="bir-xL-KGn" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

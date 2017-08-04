@@ -10,12 +10,19 @@ import Cocoa
 
 class ReceiverViewController: NSViewController, PTManagerDelegate {
 
+    @IBOutlet weak var displayLayer: DisplayLayer!
+    
+
+    var elementaryStreamDecoder: ElementaryStreamDecoder?
+
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         PTManagerReceiver.instance.delegate = self
         PTManagerReceiver.instance.connect(portNumber: PORT_NUMBER)
-        print("")
+
     }
 
     override var representedObject: Any? {
@@ -42,13 +49,8 @@ class ReceiverViewController: NSViewController, PTManagerDelegate {
             print("number")
             print(data.convert())
             break
-        case PTType.cmsamplebuffer.rawValue:
-            print("cmsamplebuffer")
-            print(data.convert())
-            break
         case PTType.elementarystream.rawValue:
-            print("elementarystream")
-//            print(data.convert())
+            decodeElementaryStream(data: data)
             break
         default:
             print("default")
@@ -56,6 +58,17 @@ class ReceiverViewController: NSViewController, PTManagerDelegate {
         }
     }
 
+
+
+    func decodeElementaryStream(data: Data) {
+        if elementaryStreamDecoder == nil {
+            elementaryStreamDecoder = ElementaryStreamDecoder(displayLayer: displayLayer)
+        }
+        guard let decoder = elementaryStreamDecoder else {
+            return
+        }
+        decoder.decode(data: data)
+    }
 
 
     func peertalk(didChangeConnection connected: Bool) {

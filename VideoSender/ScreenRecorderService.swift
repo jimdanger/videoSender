@@ -41,8 +41,8 @@ class ScreenRecorderService: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
         VTCompressionSessionCreate(nil, width, height, kCMVideoCodecType_H264, nil, nil, nil, nil, nil, compressionSesionOut)
         vtCompressionSession = compressionSesionOut.pointee.unsafelyUnwrapped
         VTSessionSetProperty(vtCompressionSession, kVTCompressionPropertyKey_RealTime, kCFBooleanTrue)
-        VTSessionSetProperty(vtCompressionSession, kVTVideoEncoderSpecification_EnableHardwareAcceleratedVideoEncoder, kCFBooleanTrue)
-        VTSessionSetProperty(vtCompressionSession, kVTCompressionPropertyKey_MaxFrameDelayCount, NSNumber(value: 3))
+//        VTSessionSetProperty(vtCompressionSession, kVTVideoEncoderSpecification_EnableHardwareAcceleratedVideoEncoder, kCFBooleanTrue)
+//        VTSessionSetProperty(vtCompressionSession, kVTCompressionPropertyKey_MaxFrameDelayCount, NSNumber(value: 3))
 
         // TODO: play with these properties ^^ to possibly improve performance.
 
@@ -118,6 +118,7 @@ class ScreenRecorderService: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
         previewSampleBuffersInThisAppBeforeSendingToOtherApp(cMSampleBuffer: cMSampleBuffer)
         convertCMSampleBuffersToElemtaryStream(frame: cMSampleBuffer)
         dumpQueuePrecheck()
+        checkIfHanging()
     }
 
     func previewSampleBuffersInThisAppBeforeSendingToOtherApp(cMSampleBuffer: CMSampleBuffer) {
