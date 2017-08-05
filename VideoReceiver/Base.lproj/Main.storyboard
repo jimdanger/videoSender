@@ -686,7 +686,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pjm-CF-j68" customClass="DisplayLayer" customModule="VideoSender">
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pjm-CF-j68" customClass="DisplayLayer" customModule="VideoReceiver">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </customView>

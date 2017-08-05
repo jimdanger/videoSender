@@ -7,6 +7,10 @@
 //
 
 import Cocoa
+import VideoToolbox
+import AVKit
+import AVFoundation
+
 
 class ReceiverViewController: NSViewController, PTManagerDelegate {
 
@@ -22,6 +26,11 @@ class ReceiverViewController: NSViewController, PTManagerDelegate {
 
         PTManagerReceiver.instance.delegate = self
         PTManagerReceiver.instance.connect(portNumber: PORT_NUMBER)
+
+        if let pl = displayLayer {
+            pl.setup()
+            pl.wantsLayer = true
+        }
 
     }
 
@@ -62,6 +71,11 @@ class ReceiverViewController: NSViewController, PTManagerDelegate {
 
     func decodeElementaryStream(data: Data) {
         if elementaryStreamDecoder == nil {
+
+
+
+            displayLayer.setup()
+            displayLayer.aVSampleBufferDisplay.videoGravity = AVLayerVideoGravityResizeAspect
             elementaryStreamDecoder = ElementaryStreamDecoder(displayLayer: displayLayer)
         }
         guard let decoder = elementaryStreamDecoder else {
